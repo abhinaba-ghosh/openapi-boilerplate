@@ -7,47 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Create Doc",
-			"id": "77455481-5cdb-46ea-9153-de3813f76c66",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "{{token}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"DrawerId\": \"000000000G\",\r\n  \"Indexes\": [\r\n    {\r\n      \"IndexId\": \"0000000036\",\r\n      \"IndexValue\": \"TEST1\"\r\n    },\r\n    {\r\n      \"IndexId\": \"0000000037\",\r\n      \"IndexValue\": \"T1\"\r\n    },\r\n    {\r\n      \"IndexId\": \"0000000038\",\r\n      \"IndexValue\": \"AUDIT\"\r\n    },\r\n    {\r\n      \"IndexId\": \"0000000039\",\r\n      \"IndexValue\": \"WORKPAPERS\"\r\n    } \r\n  ]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://api-ci.gofileroom.com/api/v1/documents",
-					"protocol": "https",
-					"host": [
-						"api-ci",
-						"gofileroom",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"documents"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "UploadFsxLargeDocumentPart",
 			"id": "ff8e7a02-a669-4b00-b7b1-19da4efff85a",
 			"protocolProfileBehavior": {
