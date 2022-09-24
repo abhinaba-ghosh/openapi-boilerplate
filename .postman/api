@@ -1,4 +1,4 @@
-id = 9a9535a4-2136-4398-93f5-2f517cfaa1fe
+id = 46f26b82-fecc-488f-8425-f0d266b9da2b
 
 [relations]
 
@@ -10,7 +10,6 @@ files[] = {"id":"23241842-6bd565cd-7b7b-4547-a643-aa2669cc3d3b","path":"LargeDoc
 
 [relations.apiDefinition]
 rootDirectory = src
-files[] = {"path":"index.yaml","metaData":{}}
 files[] = {"path":"openapi.yaml","metaData":{}}
 files[] = {"path":"parameters/_index.yaml","metaData":{}}
 files[] = {"path":"parameters/path/petId.yaml","metaData":{}}
