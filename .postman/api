@@ -1,0 +1,28 @@
+id = 9a9535a4-2136-4398-93f5-2f517cfaa1fe
+
+[relations]
+
+[relations.collections]
+rootDirectory = postman/collections
+files[] = {"id":"23241842-6bd565cd-7b7b-4547-a643-aa2669cc3d3b","path":"LargeDocumentAPI.json","metaData":{}}
+
+[relations.collections.metaData]
+
+[relations.apiDefinition]
+rootDirectory = src
+files[] = {"path":"index.yaml","metaData":{}}
+files[] = {"path":"openapi.yaml","metaData":{}}
+files[] = {"path":"parameters/_index.yaml","metaData":{}}
+files[] = {"path":"parameters/path/petId.yaml","metaData":{}}
+files[] = {"path":"parameters/query/limit.yaml","metaData":{}}
+files[] = {"path":"resources/pet.yaml","metaData":{}}
+files[] = {"path":"resources/pets.yaml","metaData":{}}
+files[] = {"path":"responses/_index.yaml","metaData":{}}
+files[] = {"path":"responses/NullResponse.yaml","metaData":{}}
+files[] = {"path":"responses/UnexpectedError.yaml","metaData":{}}
+files[] = {"path":"schemas/_index.yaml","metaData":{}}
+files[] = {"path":"schemas/Error.yaml","metaData":{}}
+files[] = {"path":"schemas/Pet.yaml","metaData":{}}
+
+[relations.apiDefinition.metaData]
+type = openapi:3

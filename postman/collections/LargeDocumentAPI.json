@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "6bd565cd-7b7b-4547-a643-aa2669cc3d3b",
+		"name": "LargeDocumentAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23241842-6bd565cd-7b7b-4547-a643-aa2669cc3d3b"
+	},
+	"item": [
+		{
+			"name": "Create Doc",
+			"id": "77455481-5cdb-46ea-9153-de3813f76c66",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"DrawerId\": \"000000000G\",\r\n  \"Indexes\": [\r\n    {\r\n      \"IndexId\": \"0000000036\",\r\n      \"IndexValue\": \"TEST1\"\r\n    },\r\n    {\r\n      \"IndexId\": \"0000000037\",\r\n      \"IndexValue\": \"T1\"\r\n    },\r\n    {\r\n      \"IndexId\": \"0000000038\",\r\n      \"IndexValue\": \"AUDIT\"\r\n    },\r\n    {\r\n      \"IndexId\": \"0000000039\",\r\n      \"IndexValue\": \"WORKPAPERS\"\r\n    } \r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-ci.gofileroom.com/api/v1/documents",
+					"protocol": "https",
+					"host": [
+						"api-ci",
+						"gofileroom",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadFsxLargeDocumentPart",
+			"id": "ff8e7a02-a669-4b00-b7b1-19da4efff85a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "basic f87uRohLA0+dzBDWImqWTdrl538qNgbBDmCY2941moqaF0lLM1+lS6D6FpQQ/Godiho+1ost6DeVLUKg9WmOKg==",
+						"type": "text"
+					},
+					{
+						"key": "file",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file ",
+							"type": "file",
+							"src": "/C:/Users/6113901/Downloads/help/file_example_TIFF_10MB.zip.001"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:44309/LargeDocument/UploadFsxLargeDocumentPart?docName=file_example_TIFF_10MB&ext=tiff&partNumber=1&length=10485760&offset=10485760",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"LargeDocument",
+						"UploadFsxLargeDocumentPart"
+					],
+					"query": [
+						{
+							"key": "docName",
+							"value": "file_example_TIFF_10MB"
+						},
+						{
+							"key": "ext",
+							"value": "tiff"
+						},
+						{
+							"key": "partNumber",
+							"value": "1"
+						},
+						{
+							"key": "length",
+							"value": "10485760"
+						},
+						{
+							"key": "offset",
+							"value": "10485760"
+						},
+						{
+							"key": "aa",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AbortFsxLargeDocumentUpload",
+			"id": "22b2c935-d216-4677-baa1-ebfe94661461",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "basic f87uRohLA0+dzBDWImqWTdrl538qNgbBDmCY2941moqaF0lLM1+lS6D6FpQQ/Godiho+1ost6DeVLUKg9WmOKg==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"docName\": \"Name\",\r\n    \"ext\": \"aaa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44309/LargeDocument/AbortFsxLargeDocumentUpload?docName=file_example_TIFF_1MB&ext=tiff",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"LargeDocument",
+						"AbortFsxLargeDocumentUpload"
+					],
+					"query": [
+						{
+							"key": "docName",
+							"value": "file_example_TIFF_1MB"
+						},
+						{
+							"key": "ext",
+							"value": "tiff"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckFileHash",
+			"id": "74a7b5f4-381c-47a5-aac5-59fc4d9f35d5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "basic f87uRohLA0+dzBDWImqWTdrl538qNgbBDmCY2941moqaF0lLM1+lS6D6FpQQ/Godiho+1ost6DeVLUKg9WmOKg==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"docName\": \"Name\",\r\n    \"ext\": \"aaa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44309/LargeDocument/CheckFsxLargeDocumentFileHash?docName={{docname}}&ext={{ext}}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"LargeDocument",
+						"CheckFsxLargeDocumentFileHash"
+					],
+					"query": [
+						{
+							"key": "docName",
+							"value": "{{docname}}"
+						},
+						{
+							"key": "ext",
+							"value": "{{ext}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompleteLargeDocumentUpload",
+			"id": "914a775b-14d8-4e41-b574-8d9c4223585e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "basic f87uRohLA0+dzBDWImqWTdrl538qNgbBDmCY2941moqaF0lLM1+lS6D6FpQQ/Godiho+1ost6DeVLUKg9WmOKg==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "a",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "aa",
+							"type": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:44309/LargeDocument/CompleteFsxLargeDocumentUpload?docName={{docname}}&ext={{ext}}&length=10485760&documentId={{documentId}}&drawerId={{DrawerId}}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44309",
+					"path": [
+						"LargeDocument",
+						"CompleteFsxLargeDocumentUpload"
+					],
+					"query": [
+						{
+							"key": "docName",
+							"value": "{{docname}}"
+						},
+						{
+							"key": "ext",
+							"value": "{{ext}}"
+						},
+						{
+							"key": "partNumber",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "length",
+							"value": "10485760"
+						},
+						{
+							"key": "offset",
+							"value": "10485760",
+							"disabled": true
+						},
+						{
+							"key": "aa",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "documentId",
+							"value": "{{documentId}}"
+						},
+						{
+							"key": "drawerId",
+							"value": "{{DrawerId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
